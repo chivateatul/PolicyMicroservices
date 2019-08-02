@@ -95,5 +95,6 @@
 		<module>pcr-claims</module>
 		<module>pcr-risks</module>
 		<module>pcr-config</module>
-	</modules>
+	<module>pcr-reports</module>
+</modules>
 </project>
