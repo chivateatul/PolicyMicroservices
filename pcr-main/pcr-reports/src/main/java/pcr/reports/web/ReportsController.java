@@ -12,6 +12,5 @@ public class ReportsController {
 
 	@Autowired
 	ReportsServicesImpl servicesImpl;
-
 	
 }

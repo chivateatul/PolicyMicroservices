@@ -10,6 +10,8 @@ import pcr.common.entity.BaseEntity;
 @Table(name = "claim_info")
 public class ClaimInfo extends BaseEntity {
 
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "member_id", nullable = false)
 	private Long memberId;
 
