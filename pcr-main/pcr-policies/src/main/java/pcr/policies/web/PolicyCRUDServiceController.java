@@ -49,7 +49,7 @@ public class PolicyCRUDServiceController {
 		Iterable<PolicyInfo> iterable = crudServiceImpl.getAllPolicies();
 
 		AppRespInfo appRespInfo = new AppRespInfo();
-		appRespInfo.addData("ALL", iterable);
+		appRespInfo.addData("RESULT", iterable);
 
 		return ResponseEntity.ok().body(appRespInfo);
 
