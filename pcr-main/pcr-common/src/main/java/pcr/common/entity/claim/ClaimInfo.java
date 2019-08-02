@@ -15,6 +15,17 @@ public class ClaimInfo extends BaseEntity {
 	@Column(name = "member_id", nullable = false)
 	private Long memberId;
 
+	@Column(name = "claim_amount", nullable = false)
+	private Double claimAmount;
+
+	public Double getClaimAmount() {
+		return claimAmount;
+	}
+
+	public void setClaimAmount(Double claimAmount) {
+		this.claimAmount = claimAmount;
+	}
+
 	public Long getMemberId() {
 		return memberId;
 	}

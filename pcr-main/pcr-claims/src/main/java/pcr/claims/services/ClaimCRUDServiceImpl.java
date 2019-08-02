@@ -18,12 +18,17 @@ public class ClaimCRUDServiceImpl {
 	@Qualifier(ClaimCRUDServiceDAO.BEAN_ID)
 	ClaimCRUDServiceDAO crudServiceDAO;
 
-	public void createClaim(ClaimInfo ClaimInfo) {
-		crudServiceDAO.save(ClaimInfo);
+	@Autowired
+	KafkaClaimPubSubServiceImpl claimPubSubServiceImpl;
+	
+	public void createClaim(ClaimInfo claimInfo) {		
+		crudServiceDAO.save(claimInfo);
+		claimPubSubServiceImpl.publishToNewClaimsKafkaTopic(claimInfo.getId());
 	}
 
-	public void updateClaim(ClaimInfo ClaimInfo) {
-		crudServiceDAO.save(ClaimInfo);
+	public void updateClaim(ClaimInfo claimInfo) {
+		crudServiceDAO.save(claimInfo);
+		claimPubSubServiceImpl.publishToNewClaimsKafkaTopic(claimInfo.getId());
 	}
 
 	public void deleteClaim(Long id) {
